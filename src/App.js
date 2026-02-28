@@ -18,25 +18,22 @@ function App() {
       ]
     );
 
-    let addTask = text =>
-    {
-      let newTask = [...tasks, {text}];
-      setTasks(newTask);
-    }
+  let addTask = text => {
+    let newTask = [...tasks, { text }];
+    setTasks(newTask);
+  }
 
-    let doneTask = index =>
-    {
-      let newTask = [...tasks];
-      newTask[index].done = !newTask[index].done;
-      setTasks(newTask);
-    }
+  let doneTask = index => {
+    let newTask = [...tasks];
+    newTask[index].done = !newTask[index].done;
+    setTasks(newTask);
+  }
 
-    let deleteTask = index =>
-    {
-      let newTask = [...tasks];
-      newTask.splice(index, 1);
-      setTasks(newTask);
-    }
+  let deleteTask = index => {
+    let newTask = [...tasks];
+    newTask.splice(index, 1);
+    setTasks(newTask);
+  }
 
   return (
     // <div className="App">
@@ -59,12 +56,17 @@ function App() {
       <Form addTask={addTask}></Form>
       {
         tasks.map
-        (
-          (task, index) =>(
+          (
+            (task, index) => (
               <Task key={index} task={task} doneTask={doneTask} index={index} deleteTask={deleteTask} ></Task>
             )
           )
       }
+
+
+
+
+
     </div>
 
   );
